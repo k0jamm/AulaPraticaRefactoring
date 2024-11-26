@@ -15,7 +15,6 @@ public class Rental {
       return _movie;
    }
 
-   // Método movido e renomeado
    public double getCharge() {
       double thisAmount = 0;
       switch (_movie.getPriceCode()) {

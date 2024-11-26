@@ -1,6 +1,3 @@
-import java.util.Enumeration;
-import java.util.Vector;
-
 public class Customer {
    private String _name;
    private Vector _rentals = new Vector();
@@ -25,16 +22,14 @@ public class Customer {
       while (rentals.hasMoreElements()) {
          Rental each = (Rental) rentals.nextElement();
 
-         // Chamada para getCharge na classe Rental
-         double thisAmount = each.getCharge();
-
+         // Substituí a variável temporária por uma chamada ao método
          frequentRenterPoints++;
          if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
              each.getDaysRented() > 1) frequentRenterPoints++;
 
          result += "\t" + each.getMovie().getTitle() + "\t" +
-                   String.valueOf(thisAmount) + "\n";
-         totalAmount += thisAmount;
+                   String.valueOf(each.getCharge()) + "\n";
+         totalAmount += each.getCharge();
       }
       result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
       result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
