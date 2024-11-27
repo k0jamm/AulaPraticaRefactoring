@@ -1,3 +1,6 @@
+import java.util.Enumeration;
+import java.util.Vector;
+
 public class Customer {
    private String _name;
    private Vector _rentals = new Vector();
@@ -22,10 +25,8 @@ public class Customer {
       while (rentals.hasMoreElements()) {
          Rental each = (Rental) rentals.nextElement();
 
-         // Substituí a variável temporária por uma chamada ao método
-         frequentRenterPoints++;
-         if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
-             each.getDaysRented() > 1) frequentRenterPoints++;
+         // Uso do novo método para calcular os pontos de locação
+         frequentRenterPoints += each.getFrequentRenterPoints();
 
          result += "\t" + each.getMovie().getTitle() + "\t" +
                    String.valueOf(each.getCharge()) + "\n";
