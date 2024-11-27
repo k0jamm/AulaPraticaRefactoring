@@ -36,7 +36,6 @@ public class Movie {
     }
  
     public double getCharge(int daysRented) {
-       // Delegação completa para Price
        return _price.getCharge(daysRented);
     }
  
