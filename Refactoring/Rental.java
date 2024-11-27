@@ -35,7 +35,6 @@ public class Rental {
       return thisAmount;
    }
 
-   // Novo método movido
    public int getFrequentRenterPoints() {
       if ((_movie.getPriceCode() == Movie.NEW_RELEASE) && _daysRented > 1)
          return 2;
