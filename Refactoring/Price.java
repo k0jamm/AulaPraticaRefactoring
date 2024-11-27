@@ -7,4 +7,3 @@ abstract class Price {
        return 1;
     }
  }
-
