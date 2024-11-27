@@ -18,12 +18,10 @@ public class Customer {
    }
 
    public String statement() {
-      // Delegação para a classe TextStatement
       return new TextStatement().value(this);
    }
 
    public String htmlStatement() {
-      // Delegação para a classe HtmlStatement
       return new HtmlStatement().value(this);
    }
 
